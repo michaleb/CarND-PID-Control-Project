@@ -20,8 +20,6 @@ void PID::Init(double Kp_, double Ki_, double Kd_) {
     i_error = 0.0;
 
     prev_cte = 0.0;
-   
-
 }
 
 void PID::UpdateError(double cte) {
@@ -32,11 +30,6 @@ void PID::UpdateError(double cte) {
   i_error += cte;
   d_error = cte - prev_cte;
   prev_cte = cte;
-
-  count += 1;
-
-
-
 }
 
 double PID::TotalError() {
