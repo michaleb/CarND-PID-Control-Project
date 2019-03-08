@@ -1,6 +1,16 @@
 # CarND-Controls-PID
 Self-Driving Car Engineer Nanodegree Program
 
+## Reflections
+The PID (Proportional, Integral, Derivative) controller for this project takes as input cross track error (CTE) values generated from the Udacity simulator as the car travels along a track. The CTE is a measure of the amount by which the car varies from a given reference trajectory. The task is to reduce this error so that the path followed by the car is as close as possible to this referenced path.
+
+The three hyperparameters / coefficients Kp, Ki and Kd of the controller collectively interacts with different forms of the error in an attempt to reduce it to zero. The proportional coefficient, Kp, directly influences the CTE, the integral coefficient, Ki, influences the sum of the errors overtime while the derivative coefficient, Kd, influences the change in error from one sequence to the next. As a consequence of this Kp used alone to correct the error can produce oscillations about the reference due to very large swings in the path taken by the car as it attempts to come back to the reference trajectory. The Kd coefficient plays a modulator role and dampens the oscillations reducing the error in a much shorter timeframe. For this project the Ki coefficient was quite minimal and only served to smooth out the path of the car when going around the deep corners of the track.
+
+The coefficients were manually tuned and the finalized values used are multiples and sub-multiples of the reciprocal of the intial CTE value of [0.7598].
+
+
+ 
+# Udacity's README
 ---
 
 ## Dependencies
